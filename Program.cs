@@ -75,7 +75,6 @@ namespace Fixer
                 br.BaseStream.Seek(8, 0);
                 if (br.ReadByte() == NewVersion)
                 {
-                    //Console.WriteLine("Fixed: " + file);
                 }
                 else
                 {
@@ -83,13 +82,13 @@ namespace Fixer
                 }
                 br.BaseStream.Close();
             }
-            else if (version == NewVersion)
+            else if (version == NewVersion || version < NewVersion)
             {
-                //Console.WriteLine("Error: No need to fix " + file);
+                Console.WriteLine("Error: Cannot fix (file is 7.4 or lower)" + file);
             }
             else
             {
-                Console.WriteLine("Error: Cannot fix " + file);
+                Console.WriteLine("Error: Cannot fix (unknown error)" + file);
             }
         }
     }
