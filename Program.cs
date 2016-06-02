@@ -30,6 +30,7 @@ namespace Fixer
             makeAllChanges();
             Console.WriteLine("The textures should now work in gmod (and possibly other source engine games that do not support the new 7.5 VTF format");
             Console.WriteLine("Press any key to close");
+            Console.WriteLine("James sucks a lot of penor");
             Console.ReadKey();
         }
         static bool buildFileArray(string folder)
